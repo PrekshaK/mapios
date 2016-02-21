@@ -60,7 +60,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         //process items here
                         print (items)
                         
-                        if let name = items["name"] as? String{
+                        if let name = items["name"] as? String, vicinity = items["vicinity"] as? String{
                             
                             let coords: [Double] = self.getCoords(items["geometry"] as! Dictionary)
                             
@@ -72,7 +72,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                                 longitude: coords[1]
                             )
                             
-                            annotation.title = name
+                            annotation.title = name + vicinity
                             
                             self.mapView.addAnnotation(annotation)
                             

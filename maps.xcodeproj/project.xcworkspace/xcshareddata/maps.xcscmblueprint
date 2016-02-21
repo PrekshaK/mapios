@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "5897CD71B49ACA43884513AD0B675178F542C143",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "5897CD71B49ACA43884513AD0B675178F542C143" : 0,
+    "F16D24CBD3B0399467EDC29867AF03BC48306972" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "15D5C85B-C21E-4325-A821-A2AB0D220087",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "5897CD71B49ACA43884513AD0B675178F542C143" : "maps\/",
+    "F16D24CBD3B0399467EDC29867AF03BC48306972" : ".."
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "maps",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "maps.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/prekshakoirala\/Desktop\/spring%2016\/mobapp\/maps",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5897CD71B49ACA43884513AD0B675178F542C143"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/PrekshaK\/iosclassproject.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F16D24CBD3B0399467EDC29867AF03BC48306972"
+    }
+  ]
+}

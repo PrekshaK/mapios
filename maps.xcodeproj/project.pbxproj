@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC0972F51C7CF0EC0066B3BF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC0972F41C7CF0EC0066B3BF /* MapKit.framework */; };
 		BC0ABFAE1C76F47700C4BBFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0ABFAD1C76F47700C4BBFE /* AppDelegate.swift */; };
 		BC0ABFB01C76F47700C4BBFE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0ABFAF1C76F47700C4BBFE /* ViewController.swift */; };
 		BC0ABFB31C76F47800C4BBFE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC0ABFB11C76F47800C4BBFE /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BC0972F41C7CF0EC0066B3BF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		BC0ABFAA1C76F47700C4BBFE /* maps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = maps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC0ABFAD1C76F47700C4BBFE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC0ABFAF1C76F47700C4BBFE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC0972F51C7CF0EC0066B3BF /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +80,7 @@
 		BC0ABFA11C76F47700C4BBFE = {
 			isa = PBXGroup;
 			children = (
+				BC0972F41C7CF0EC0066B3BF /* MapKit.framework */,
 				BC0ABFAC1C76F47700C4BBFE /* maps */,
 				BC0ABFC11C76F47800C4BBFE /* mapsTests */,
 				BC0ABFCC1C76F47800C4BBFE /* mapsUITests */,
@@ -194,6 +198,11 @@
 					BC0ABFA91C76F47700C4BBFE = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = 5229HAVQ82;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					BC0ABFBD1C76F47800C4BBFE = {
 						CreatedOnToolsVersion = 7.2;
@@ -487,6 +496,7 @@
 				BC0ABFD41C76F47800C4BBFE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BC0ABFD51C76F47800C4BBFE /* Build configuration list for PBXNativeTarget "mapsTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +505,7 @@
 				BC0ABFD71C76F47800C4BBFE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BC0ABFD81C76F47800C4BBFE /* Build configuration list for PBXNativeTarget "mapsUITests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +514,7 @@
 				BC0ABFDA1C76F47800C4BBFE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

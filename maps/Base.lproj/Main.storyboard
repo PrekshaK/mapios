@@ -19,6 +19,9 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="zHn-7T-yfb">
                                 <rect key="frame" x="21" y="82" width="278" height="468"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="eLE-RE-Itc"/>
+                                </connections>
                             </mapView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Keyword" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSh-IQ-Nq8">
                                 <rect key="frame" x="118" y="15" width="67" height="21"/>

@@ -8,7 +8,7 @@ import CoreLocation
 var searchKey = ""
 let GOOGLE_API_KEY = "AIzaSyB9Yzf1rT5v01NZBiv4mj4HPzRr4AhOC0w"
 
-class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, MKMapViewDelegate {
     
     
     let locationManager = CLLocationManager()
@@ -16,6 +16,8 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
     @IBOutlet weak var mapView: MKMapView!
     
     @IBOutlet weak var keyword: UITextField!
+    
+    var annotation = MKPointAnnotation()
     
     
     
@@ -26,6 +28,30 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
 //            print (coord.latitude)
 //            print(coord.longitude)
         }
+    }
+    
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "myspot")
+       // annotationView.enabled = true
+        annotationView.canShowCallout = true
+        annotationView.tintColor = UIColor.blueColor()
+        
+        let button = UIButton(type: .DetailDisclosure)
+        annotationView.rightCalloutAccessoryView = button
+
+        return annotationView
+    }
+    
+    
+    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        let location = view.annotation as! mapLocation
+        let title = location.title
+        let placeId = location.placeId
+        let alert = UIAlertController(title: title, message: "Got Place Id for Next Page", preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler:nil ))
+        presentViewController(alert, animated:true, completion:nil)
+        
+        self.performSegueWithIdentifier(<#T##identifier: String##String#>, sender: <#T##AnyObject?#>)
     }
     
     
@@ -88,19 +114,19 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
                             let coords: [Double] = self.getCoords(items["geometry"] as! Dictionary)
                             
                             
-                            let annotation = MKPointAnnotation()
+                            
                             
                             //defining annotations
-                            annotation.coordinate = CLLocationCoordinate2D(
+                            self.annotation.coordinate = CLLocationCoordinate2D(
                                 latitude: coords[0],
                                 longitude: coords[1]
                             )
                             
-                            annotation.title = name + vicinity
+                            self.annotation.title = name + vicinity
                             
                             //pinning annotations
                             
-                            self.mapView.addAnnotation(annotation)
+//                            self.mapView.addAnnotation(self.annotation)
                             
                         }
                         
@@ -109,6 +135,7 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
                     dispatch_async(dispatch_get_main_queue()){
                         self.mapView.setRegion(region, animated: true)
                     }
+                    self.mapView.addAnnotation(self.annotation)
                 }
 
                 
@@ -181,6 +208,10 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
     
     
 }
+
+
+
+
 
 
 

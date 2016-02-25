@@ -10,17 +10,20 @@ import UIKit
 import CoreLocation
 import MapKit
 
-class mapLocation: NSObject, MKAnnotation{
+class mapLocation: NSObject, MKAnnotation {
     
     
     let title: String?
-    dynamic var coordinate: CLLocationCoordinate2D
+    let coordinate: CLLocationCoordinate2D
     let placeId: String
+    let subtitle: String?
+   
     
     
     
-    init(title: String, coordinate:CLLocationCoordinate2D, placeId: String){
+    init(title: String, coordinate:CLLocationCoordinate2D, placeId: String, subtitle: String){
         
+        self.subtitle = subtitle
         self.title = title
         self.coordinate = coordinate
         self.placeId = placeId

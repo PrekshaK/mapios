@@ -17,41 +17,45 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
     
     @IBOutlet weak var keyword: UITextField!
     
-    var annotation = MKPointAnnotation()
     
     
     
     
     var locValue:CLLocation!{
         didSet{
-            //let coord = self.currentLocation.coordinate
-//            print (coord.latitude)
-//            print(coord.longitude)
+            let coord = self.locValue.coordinate
+            print (coord.latitude)
+            print(coord.longitude)
         }
     }
     
+    
+    
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
-        let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "myspot")
-       // annotationView.enabled = true
+        let annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "myspot")
+        annotationView.animatesDrop = true
         annotationView.canShowCallout = true
-        annotationView.tintColor = UIColor.blueColor()
+        annotationView.pinTintColor = UIColor.blueColor()
         
         let button = UIButton(type: .DetailDisclosure)
         annotationView.rightCalloutAccessoryView = button
+    
+        
 
         return annotationView
     }
-    
+//
     
     func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         let location = view.annotation as! mapLocation
         let title = location.title
         let placeId = location.placeId
-        let alert = UIAlertController(title: title, message: "Got Place Id for Next Page", preferredStyle: .Alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler:nil ))
-        presentViewController(alert, animated:true, completion:nil)
+//        let alert = UIAlertController(title: title, message: "Got Place Id for Next Page", preferredStyle: .Alert)
+//        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler:nil ))
+//        presentViewController(alert, animated:true, completion:nil)
+        print ("we are here")
+        performSegueWithIdentifier("hello", sender: self)
         
-        self.performSegueWithIdentifier(<#T##identifier: String##String#>, sender: <#T##AnyObject?#>)
     }
     
     
@@ -72,14 +76,9 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
         
         
         print (searchKey)
+        print (locValue.coordinate.longitude)
         
         var baseURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(locValue.coordinate.latitude),\(locValue.coordinate.longitude)&radius=500&type=restaurant&name=\(searchKey)&key=\(GOOGLE_API_KEY)"
-        
-        
-        
-        
-        
-        
         
         
        // here we declare center and vicinity of the map
@@ -105,7 +104,7 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
                 if let items = json["results"] as? [[String: AnyObject]]{
                     for items in items{
                         
-                        print (items)
+                       // print (items)
                         
                         
                         
@@ -114,19 +113,20 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
                             let coords: [Double] = self.getCoords(items["geometry"] as! Dictionary)
                             
                             
-                            
+                            var annotation = MKPointAnnotation()
+
                             
                             //defining annotations
-                            self.annotation.coordinate = CLLocationCoordinate2D(
+                            annotation.coordinate = CLLocationCoordinate2D(
                                 latitude: coords[0],
                                 longitude: coords[1]
                             )
                             
-                            self.annotation.title = name + vicinity
+                            annotation.title = name + vicinity
                             
                             //pinning annotations
                             
-//                            self.mapView.addAnnotation(self.annotation)
+                            self.mapView.addAnnotation(annotation)
                             
                         }
                         
@@ -135,7 +135,8 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
                     dispatch_async(dispatch_get_main_queue()){
                         self.mapView.setRegion(region, animated: true)
                     }
-                    self.mapView.addAnnotation(self.annotation)
+                    
+                    
                 }
 
                 
@@ -161,15 +162,11 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
         
-        
-        
-        
         self.keyword.becomeFirstResponder()
         super.viewDidLoad()
     
         var center = CLLocationCoordinate2DMake(38.90, -77.016)
         var region = MKCoordinateRegion(center:center, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
-        
         
         //pinning annotations when view loads
         self.mapView.setRegion(region, animated: true)

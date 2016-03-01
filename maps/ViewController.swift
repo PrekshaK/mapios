@@ -50,11 +50,11 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
         let location = view.annotation as! mapLocation
         let title = location.title
         let placeId = location.placeId
-//        let alert = UIAlertController(title: title, message: "Got Place Id for Next Page", preferredStyle: .Alert)
-//        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler:nil ))
-//        presentViewController(alert, animated:true, completion:nil)
+        let alert = UIAlertController(title: title, message: "Got Place Id for Next Page", preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler:nil ))
+        presentViewController(alert, animated:true, completion:nil)
         print ("we are here")
-        performSegueWithIdentifier("hello", sender: self)
+       // performSegueWithIdentifier("hello", sender: self)
         
     }
     
@@ -113,18 +113,18 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
                             let coords: [Double] = self.getCoords(items["geometry"] as! Dictionary)
                             
                             
-                            var annotation = MKPointAnnotation()
+                            var annotation = mapLocation(title: name, coordinate: CLLocationCoordinate2D(latitude: coords[0], longitude:coords[1]), placeId: "Place", subtitle: "We are here")
 
                             
-                            //defining annotations
-                            annotation.coordinate = CLLocationCoordinate2D(
-                                latitude: coords[0],
-                                longitude: coords[1]
-                            )
-                            
-                            annotation.title = name + vicinity
-                            
-                            //pinning annotations
+//                            //defining annotations
+//                          //  annotation.coordinate = CLLocationCoordinate2D(
+//                                latitude: coords[0],
+//                                longitude: coords[1]
+//                            )
+//                            
+//                            annotation.title = name + vicinity
+//                            
+//                            //pinning annotations
                             
                             self.mapView.addAnnotation(annotation)
                             

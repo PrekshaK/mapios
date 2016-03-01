@@ -5,6 +5,22 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Fln-zg-4Lb">
+            <objects>
+                <navigationController id="tcr-Om-RyK" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nrx-7B-1Dv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Jsz-GO-t13"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JGl-e1-KqN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-393" y="288"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -18,7 +34,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="zHn-7T-yfb">
-                                <rect key="frame" x="21" y="82" width="278" height="468"/>
+                                <rect key="frame" x="22" y="118" width="278" height="430"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="eLE-RE-Itc"/>
                                 </connections>
@@ -30,7 +46,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TDA-Oe-zHL">
-                                <rect key="frame" x="49" y="44" width="205" height="30"/>
+                                <rect key="frame" x="49" y="80" width="205" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -40,14 +56,35 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="VgU-eo-KBe"/>
                     <connections>
                         <outlet property="keyword" destination="TDA-Oe-zHL" id="HYx-8p-ykf"/>
                         <outlet property="mapView" destination="zHn-7T-yfb" id="q6W-Ol-l4h"/>
+                        <segue destination="z9x-Ts-daJ" kind="push" id="9gW-vk-41A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="162" y="331"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="DuQ-Nz-lSA">
+            <objects>
+                <viewController id="z9x-Ts-daJ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Gee-wf-TRw"/>
+                        <viewControllerLayoutGuide type="bottom" id="VtC-is-MUM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GlX-ms-ENo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="8GZ-Bd-PZF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6A2-cc-FqR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="529" y="331"/>
         </scene>
     </scenes>
 </document>

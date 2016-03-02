@@ -8,7 +8,7 @@ import CoreLocation
 var searchKey = ""
 let GOOGLE_API_KEY = "AIzaSyB9Yzf1rT5v01NZBiv4mj4HPzRr4AhOC0w"
 
-class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, MKMapViewDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate{
     
     
     let locationManager = CLLocationManager()
@@ -49,15 +49,26 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
     func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         let location = view.annotation as! mapLocation
         let title = location.title
+        
         let placeId = location.placeId
-        let alert = UIAlertController(title: title, message: "Got Place Id for Next Page", preferredStyle: .Alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler:nil ))
-        presentViewController(alert, animated:true, completion:nil)
+//        let alert = UIAlertController(title: title, message: "Got Place Id for Next Page", preferredStyle: .Alert)
+//        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler:nil ))
+//        presentViewController(alert, animated:true, completion:nil)
         print ("we are here")
        // performSegueWithIdentifier("hello", sender: self)
+        self.performSegueWithIdentifier("DetailPageSegue", sender: location)
         
     }
     
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "DetailPageSegue"){
+            let detailView:DetailViewController = segue.destinationViewController as! DetailViewController
+            
+            detailView.detaillocation = (sender as? mapLocation)!
+        }
+    }
     
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {

@@ -19,11 +19,15 @@ class mapLocation: NSObject, MKAnnotation {
     let subtitle: String?
    
     
-//    override init() {
-//        
-//        self.title =
-//        
-//    }
+    override init() {
+        self.title = "title"
+        self.placeId = "placeId String"
+        self.coordinate = CLLocationCoordinate2D(latitude: 30, longitude: 100)
+        self.subtitle = "subtitle string"
+        super.init()
+     
+        
+    }
     init(title: String, coordinate:CLLocationCoordinate2D, placeId: String, subtitle: String){
         
         self.subtitle = subtitle

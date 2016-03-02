@@ -15,6 +15,7 @@
 		BC0ABFB81C76F47800C4BBFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC0ABFB61C76F47800C4BBFE /* LaunchScreen.storyboard */; };
 		BC0ABFC31C76F47800C4BBFE /* mapsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0ABFC21C76F47800C4BBFE /* mapsTests.swift */; };
 		BC0ABFCE1C76F47800C4BBFE /* mapsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0ABFCD1C76F47800C4BBFE /* mapsUITests.swift */; };
+		BCB06FA21C8629190038C766 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB06FA11C8629190038C766 /* DetailViewController.swift */; };
 		BCC771E91C7E96EE004154A7 /* mapLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC771E81C7E96EE004154A7 /* mapLocation.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		BC0ABFC91C76F47800C4BBFE /* mapsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mapsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC0ABFCD1C76F47800C4BBFE /* mapsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapsUITests.swift; sourceTree = "<group>"; };
 		BC0ABFCF1C76F47800C4BBFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCB06FA11C8629190038C766 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		BCC771E81C7E96EE004154A7 /* mapLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mapLocation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,6 +112,7 @@
 				BC0ABFB61C76F47800C4BBFE /* LaunchScreen.storyboard */,
 				BC0ABFB91C76F47800C4BBFE /* Info.plist */,
 				BCC771E81C7E96EE004154A7 /* mapLocation.swift */,
+				BCB06FA11C8629190038C766 /* DetailViewController.swift */,
 			);
 			path = maps;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				BC0ABFB01C76F47700C4BBFE /* ViewController.swift in Sources */,
 				BC0ABFAE1C76F47700C4BBFE /* AppDelegate.swift in Sources */,
 				BCC771E91C7E96EE004154A7 /* mapLocation.swift in Sources */,
+				BCB06FA21C8629190038C766 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -34,8 +34,8 @@ class DetailViewController: UIViewController{
         
         
         titleView.text = detaillocation.title
-        subtitleView.text = detaillocation.subtitle
-        locationcoordView.text = detaillocation.coordinate as? String
+        subtitleView.text = String(detaillocation.coordinate.latitude) + " " + String(detaillocation.coordinate.longitude)
+        locationcoordView.text = String(detaillocation.coordinate.latitude) + " " + String(detaillocation.coordinate.longitude)
         placeIdView.text = detaillocation.placeId
         print (detaillocation.title)
         titleView.text = "hi"

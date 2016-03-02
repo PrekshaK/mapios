@@ -115,7 +115,7 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
                 if let items = json["results"] as? [[String: AnyObject]]{
                     for items in items{
                         
-                       // print (items)
+                        print (items)
                         
                         
                         
@@ -124,7 +124,7 @@ class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDe
                             let coords: [Double] = self.getCoords(items["geometry"] as! Dictionary)
                             
                             
-                            var annotation = mapLocation(title: name, coordinate: CLLocationCoordinate2D(latitude: coords[0], longitude:coords[1]), placeId: "Place", subtitle: "We are here")
+                            var annotation = mapLocation(title: name, coordinate: CLLocationCoordinate2D(latitude: coords[0], longitude:coords[1]), placeId: vicinity, subtitle: "delicious")
 
                             
 //                            //defining annotations

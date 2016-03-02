@@ -80,69 +80,66 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Subtitle" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="IUc-hG-dkz">
-                                <rect key="frame" x="0.0" y="230" width="240" height="45"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="3v7-oi-sbn"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Location" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ahU-bh-AVH">
-                                <rect key="frame" x="0.0" y="281" width="240" height="38"/>
+                                <rect key="frame" x="0.0" y="208" width="240" height="38"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="38" id="Hlh-dm-z4g"/>
+                                    <constraint firstAttribute="height" constant="38" id="GDh-4Q-5dQ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="PlaceId" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XJN-Dd-k76">
-                                <rect key="frame" x="0.0" y="337" width="240" height="37"/>
+                                <rect key="frame" x="0.0" y="254" width="240" height="37"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="37" id="vaF-C0-i2J"/>
+                                    <constraint firstAttribute="height" constant="37" id="B2B-Kc-UqD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Title" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4aA-UP-hEJ">
+                                <rect key="frame" x="0.0" y="108" width="248" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Q6W-Ol-oJd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Subtitle" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="IUc-hG-dkz">
+                                <rect key="frame" x="0.0" y="160" width="240" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="qbF-3Y-PG2"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="stC-JP-umK">
-                                <rect key="frame" x="12" y="412" width="30" height="30"/>
+                                <rect key="frame" x="9" y="311" width="30" height="30"/>
                                 <state key="normal" title="OK"/>
                                 <connections>
                                     <action selector="actionButton:" destination="z9x-Ts-daJ" eventType="touchUpInside" id="CPY-Ri-l6H"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="By7-XJ-Sa2">
-                                <rect key="frame" x="0.0" y="177" width="248" height="50"/>
-                                <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Title" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4aA-UP-hEJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="248" height="50"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                </subviews>
-                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ahU-bh-AVH" firstAttribute="trailing" secondItem="IUc-hG-dkz" secondAttribute="trailing" id="1b4-QZ-cC4"/>
-                            <constraint firstItem="ahU-bh-AVH" firstAttribute="leading" secondItem="IUc-hG-dkz" secondAttribute="leading" id="1li-WG-IdR"/>
-                            <constraint firstItem="IUc-hG-dkz" firstAttribute="top" secondItem="By7-XJ-Sa2" secondAttribute="bottom" constant="3" id="2vJ-AD-HlF"/>
-                            <constraint firstItem="XJN-Dd-k76" firstAttribute="trailing" secondItem="ahU-bh-AVH" secondAttribute="trailing" id="4N2-XX-NdN"/>
-                            <constraint firstItem="XJN-Dd-k76" firstAttribute="leading" secondItem="ahU-bh-AVH" secondAttribute="leading" id="5B8-ft-vv1"/>
-                            <constraint firstItem="XJN-Dd-k76" firstAttribute="leading" secondItem="By7-XJ-Sa2" secondAttribute="leading" id="CQf-pF-ush"/>
-                            <constraint firstItem="stC-JP-umK" firstAttribute="top" secondItem="XJN-Dd-k76" secondAttribute="bottom" constant="38" id="Cox-y0-LrD"/>
-                            <constraint firstItem="ahU-bh-AVH" firstAttribute="top" secondItem="IUc-hG-dkz" secondAttribute="bottom" constant="6" id="DZc-6b-bzy"/>
-                            <constraint firstItem="By7-XJ-Sa2" firstAttribute="top" secondItem="Gee-wf-TRw" secondAttribute="bottom" constant="113" id="S88-ST-ohN"/>
-                            <constraint firstItem="stC-JP-umK" firstAttribute="leading" secondItem="GlX-ms-ENo" secondAttribute="leadingMargin" constant="-4" id="UGK-Mj-0fj"/>
-                            <constraint firstItem="By7-XJ-Sa2" firstAttribute="leading" secondItem="GlX-ms-ENo" secondAttribute="leading" id="bwd-Vz-3MH"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="By7-XJ-Sa2" secondAttribute="trailing" constant="56" id="nHV-Lo-QdM"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="IUc-hG-dkz" secondAttribute="trailing" constant="64" id="pPN-IO-2do"/>
-                            <constraint firstAttribute="bottom" secondItem="By7-XJ-Sa2" secondAttribute="bottom" constant="341" id="sjO-FP-3SG"/>
-                            <constraint firstItem="XJN-Dd-k76" firstAttribute="top" secondItem="ahU-bh-AVH" secondAttribute="bottom" constant="18" id="uVU-TN-dRp"/>
+                            <constraint firstItem="ahU-bh-AVH" firstAttribute="leading" secondItem="IUc-hG-dkz" secondAttribute="leading" id="41C-za-CFl"/>
+                            <constraint firstItem="XJN-Dd-k76" firstAttribute="leading" secondItem="4aA-UP-hEJ" secondAttribute="leading" id="5Oy-vc-nSP"/>
+                            <constraint firstItem="stC-JP-umK" firstAttribute="top" secondItem="XJN-Dd-k76" secondAttribute="bottom" constant="20" id="7PJ-X4-gpW"/>
+                            <constraint firstItem="4aA-UP-hEJ" firstAttribute="leading" secondItem="GlX-ms-ENo" secondAttribute="leading" id="7Vm-6v-ebr"/>
+                            <constraint firstItem="stC-JP-umK" firstAttribute="leading" secondItem="GlX-ms-ENo" secondAttribute="leadingMargin" constant="-7" id="B8z-hO-aa4"/>
+                            <constraint firstItem="ahU-bh-AVH" firstAttribute="top" secondItem="IUc-hG-dkz" secondAttribute="bottom" constant="3" id="Jlo-LF-VJR"/>
+                            <constraint firstItem="XJN-Dd-k76" firstAttribute="trailing" secondItem="ahU-bh-AVH" secondAttribute="trailing" id="baC-oN-W26"/>
+                            <constraint firstItem="XJN-Dd-k76" firstAttribute="top" secondItem="ahU-bh-AVH" secondAttribute="bottom" constant="8" symbolic="YES" id="mx3-ra-D8M"/>
+                            <constraint firstItem="4aA-UP-hEJ" firstAttribute="top" secondItem="Gee-wf-TRw" secondAttribute="bottom" constant="44" id="o0j-NJ-1b9"/>
+                            <constraint firstItem="XJN-Dd-k76" firstAttribute="leading" secondItem="ahU-bh-AVH" secondAttribute="leading" id="qpa-pu-8C1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4aA-UP-hEJ" secondAttribute="trailing" constant="56" id="rP2-kJ-fHu"/>
+                            <constraint firstItem="XJN-Dd-k76" firstAttribute="trailing" secondItem="IUc-hG-dkz" secondAttribute="trailing" id="wig-0V-SSr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IUc-hG-dkz" secondAttribute="trailing" constant="64" id="yLi-7R-fxd"/>
+                            <constraint firstItem="IUc-hG-dkz" firstAttribute="top" secondItem="4aA-UP-hEJ" secondAttribute="bottom" constant="2" id="yYF-UL-wS0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8GZ-Bd-PZF"/>
